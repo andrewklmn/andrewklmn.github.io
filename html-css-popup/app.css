@@ -1,0 +1,253 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  /*
+  background-image: url(img/bg_image.jpg);
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center; 
+  */
+  width: 100vw;  
+  height: 100vh;
+}
+
+label.button {
+  color:black;
+  cursor: pointer;
+  border: white solid thin;
+  box-sizing: border-box;
+}
+
+label.button:hover {
+  color: darkblue;
+  border: gray solid thin;
+}
+
+label#show-items {
+  display: inline-block;
+  height: 36px;
+}
+
+div#main-popup {
+  width:  320px;
+  height: 500px;
+  margin-right: 30px;
+  background-color: white;
+  
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  z-index: 6;
+}
+
+nav a {
+  color:black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  border-bottom: solid white  1px;
+}
+
+nav a:hover {
+  color: black;
+  text-align: center;
+  border-bottom: solid black 1px;
+}
+
+
+
+
+.topnav-right {
+  width: 250px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 50px;
+}
+
+.icon {
+  width:36px;
+  height:36px;
+}
+
+
+div#container {
+  position: relative;
+  z-index: 5;
+}
+
+div#scroll-area {
+  height:100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+input.popup, div.content {
+  display: none;
+}
+input.popup:checked + div.content {
+  display: block;
+}
+
+
+input#more-control:checked + div.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+label#button-close {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.3;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+label#more-button {
+  background-color: lightgray;
+  display: inline-block;
+  height: 5%;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  font-size: 12px;
+  padding-top: 7px;
+}
+
+div#main-popup {
+  position: absolute;
+  top: 10px;
+  right:23px;
+  border: lightgray solid thin;
+  -webkit-box-shadow: 3px 3px 10px 0px gray;
+  -moz-box-shadow: 3px 3px 10px 0px gray;
+  box-shadow: 5px 5px 10px 0px gray;
+}
+
+div#main-items {
+  background-color: white;
+  height: 95%;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+div.flex-items {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+a.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  width: 70px;
+  height: 70px;
+  padding: 7px;
+  font-size: 12px;
+  text-decoration: none;
+  color: gray;
+  border: solid thin white;
+  outline: none;
+}
+
+a.item:focus {
+  border: solid thin blue;
+}
+
+a.item:hover {
+  border: solid thin gray;
+}
+
+a.item > img{
+  max-width:50px;
+  max-height:45px;
+  margin: auto;
+}
+
+/*
+label#less-button {
+  align-self: flex-end;
+  height: 10%;
+  width: 100%;
+  cursor: pointer;
+}
+*/
+
+div#more-items {
+  border-top: lightgray solid thin;
+  position: relative;
+  top: -5%;
+  background-color: white;
+  height: 50%;
+  display: none;
+  box-sizing: border-box;
+}
+
+div#square {
+  position: absolute;
+  top: -10px;
+  right: 117px;
+  height: 18px;
+  width: 18px;
+  border-color: lightgray;
+  border-style: solid;
+  border-width: thin 0px 0px thin;
+  transform: rotate(45deg);
+  background-color: white;
+}
+
+div#mock-content {
+  position: absolute;
+  top: 48px;
+  left: 0px;
+  right: 0px;
+  height: auto;
+}
+
+div#mock-content input {
+  width: 258px;
+}
+
+div#company-logo {
+  height: 500px;
+  width: 50%;
+  margin: auto;
+}
+
+div#company-logo img {
+  margin-top: 120px;
+}
+
+a#kottans {
+  text-decoration: none;
+  width:90%;
+  padding-top:20px;
+  font-size: 12px;
+  color: gray;
+  cursor: pointer;
+}
+
+a#kottans:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+
+

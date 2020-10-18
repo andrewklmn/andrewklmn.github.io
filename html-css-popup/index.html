@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="app.css" rel="stylesheet"/>
+  <title>html-css-popup-task</title>
+</head>
+<body>
+  <nav>
+    <div class="topnav-right">
+      <a href="#">Mail</a>
+      <a href="#">Images</a>
+      <label id="show-items" class="button" for="popup-control">
+        <img class="icon" src="img/bento_icon.png"/>
+      </label>
+      <a href="#">
+        <img class="icon" src="img/icon_bell.png"/>
+      </a>
+      <a href="#">
+        <img class="icon" src="img/user_icon.png"/>
+      </a>
+    </div>
+  </nav>
+  <div id="container">
+    <input type="checkbox" class="popup" id="popup-control">
+    <div id="main-popup" class="content">
+      <div id="square"></div>
+      <label id="button-close" for="popup-control"></label>
+      <div id="scroll-area">
+        <div id="main-items" class="content flex-items">
+          <a class="item" href="#">
+            <img src="img/popup-icons/calendar.png" alt="mail"/>
+              Calendar
+          </a>
+          <a class="item" href="#">
+              <img src="img/popup-icons/mail.png" alt="mail"/>
+              Mail
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/news.png" alt="mail"/>
+             News
+          </a>
+
+          <a class="item" href="#">
+            <img src="img/popup-icons/maps.png" alt="mail"/>
+              Map
+          </a>
+          <a class="item" href="#">
+              <img src="img/popup-icons/files.png" alt="mail"/>
+              Files
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/contacts.png" alt="mail"/>
+             Contacts
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/tanslation.png" alt="mail"/>
+            Translate
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/videos.png" alt="mail"/>
+            Videos
+          </a>
+
+          <a class="item" href="#">
+          <img src="img/popup-icons/search.png" alt="mail"/>
+            Search
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/photos.png" alt="mail"/>
+              Photo
+          </a>
+          <a class="item" href="#">
+              <img src="img/popup-icons/apps.png" alt="mail"/>
+              Apps
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/documents.png" alt="mail"/>
+             Document
+          </a>
+
+        </div>
+        <label id="more-button" class="button" for="more-control">More</label>   
+        <input type="checkbox" class="popup" id="more-control">
+  
+        <div id="more-items" class="content flex-items">
+          
+          <a class="item" href="#">
+            <img src="img/popup-icons/chat.png" alt="mail"/>
+              Chat
+          </a>
+          <a class="item" href="#">
+              <img src="img/popup-icons/classroom.png" alt="mail"/>
+              Classroom
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/collection.png" alt="mail"/>
+             Collection
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/mars.png" alt="mail"/>
+              Mars
+          </a>
+          <a class="item" href="#">
+              <img src="img/popup-icons/blogs.png" alt="mail"/>
+              Blogs
+          </a>
+          <a class="item" href="#">
+            <img src="img/popup-icons/promo.png" alt="mail"/>
+             Promos
+          </a>
+          <a id="kottans" href="https://kottans.org/">Even more from Kottans</a>
+          <!-- <label id="less-button" class="button" for="more-control">Less</label>  -->
+        </div>  
+      </div>
+    </div>
+  </div>
+  <div id="mock-content">
+    <div id="company-logo">
+      <img src="img/boooble_logo.png" alt="Company logo"/>
+      <br/>
+      <input type="text" placeholder="Search something"/>
+    </div>
+  </div>
+</body>
+</html>
