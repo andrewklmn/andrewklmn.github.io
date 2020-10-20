@@ -17,7 +17,7 @@ nav {
   justify-content: flex-end;
 }
 
-nav > ul > li > a {
+.menu-item {
   border-bottom: solid white  1px;
 
   text-align: center;
@@ -27,22 +27,22 @@ nav > ul > li > a {
   outline: none;
 }
 
-nav > ul > li > a:focus {
+.menu-item:focus {
   border-bottom: solid blue 1px;
 }
 
-nav > ul > li > a:hover {
+.menu-item:hover {
   text-align: center;
   color: black;
 
   border-bottom: solid black 1px;
 }
 
-nav > ul > li > a:active {
+.menu-item:active {
   border-bottom: solid red 1px;
 }
 
-nav > ul > li {
+li {
   list-style: none;
 }
 
@@ -145,6 +145,23 @@ nav > ul > li {
   background-color: white;
 }
 
+.auto-scrolled-area::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 117px;
+
+  height: 18px;
+  width: 18px;
+
+  background-color: white;
+  border-color: lightgray;
+  border-style: solid;
+  border-width: thin 0 0 thin;
+
+  transform: rotate(45deg);
+}
+
 .content {
   display: none;
 }
@@ -157,20 +174,6 @@ nav > ul > li {
 #more-items:target {
   display: flex;
   flex-wrap: wrap;
-}
-
-.fading-area-for-menu-closing {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
-
-  background-color: lightgray;
-  opacity: 0.3;
-
-  cursor: pointer;
 }
 
 .btn-more {
@@ -251,22 +254,6 @@ nav > ul > li {
   border-top: lightgray solid thin;
 
   box-sizing: border-box;
-}
-
-.menu-deco-square {
-  position: absolute;
-  top: -10px;
-  right: 117px;
-
-  height: 18px;
-  width: 18px;
-
-  background-color: white;
-  border-color: lightgray;
-  border-style: solid;
-  border-width: thin 0 0 thin;
-
-  transform: rotate(45deg);
 }
 
 .mock-content-container {
