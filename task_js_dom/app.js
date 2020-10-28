@@ -62,40 +62,37 @@ const state = {
 
 const menuContainer = document.querySelector('.menu-container');
 const menuUl = document.querySelector('.menu');
-const wraper = document.querySelector('.wraper');
-const header = document.querySelector('.header');
+const toggleMenuButton = document.querySelector('.btn-toogle-menu');
+const wrapper = document.querySelector('.wrapper');
+const title = document.querySelector('.title');
 const image = document.querySelector('.picture');
 const description = document.querySelector('.description');
+const locationLine = document.querySelector('.habitat-line');
 const locationArea = document.querySelector('.habitat');
 const attractionMethod = document.querySelector('.method');
 
-const getViewWidth = () => Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-const maxAutoHideMenuWidth = 820;
+  const getViewWidth = () => Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  const maxAutoHideMenuWidth = 820;
+
 
 const toggleMenu = (event)=>{
   
-  event.target.classList.toggle("burger");
-  
+  event.target.classList.toggle("closed");
   menuContainer.classList.toggle("opened") ;
-  wraper.classList.toggle("wide");
+  wrapper.classList.toggle("wide");
 
-  event.stopPropagation();
-  return false;
 };
 
 const menuItemClickListener = (event)=>{
 
   if (event.target.matches('.menu-item')) {
-    state.activeIndex = event.target.parentNode.id;
+    state.activeIndex = Number(event.target.parentNode.id);
     renderPage(state);
-  
+
     if (getViewWidth() < maxAutoHideMenuWidth) {
       document.querySelector('.btn-toogle-menu').click(); 
     }
-    event.stopPropagation();
   };
-
-  return false;
 };
 
 const renderMenu = (state)=>{
@@ -111,7 +108,7 @@ const renderMenu = (state)=>{
     a.classList.add("menu-item");
     a.href = "javascript:void(0)";
     
-    if (index==state.activeIndex) {
+    if (index===state.activeIndex) {
       a.classList.toggle("active");
     };
 
@@ -121,14 +118,20 @@ const renderMenu = (state)=>{
 };
 
 const showTextContent = ()=>{
-  document.body.classList.remove("text-white");
-}
+  setTimeout(()=> {
+    description.classList.remove("transparent");
+    locationLine.classList.remove("transparent");
+    attractionMethod.classList.remove("transparent");
+  }, 150); /* this timeout was added just for immitation longer time of image loading */
+};
 
 const renderArticle = (content)=> {
 
-  document.body.classList.add("text-white");
+  description.classList.add("transparent");
+  locationLine.classList.add("transparent");
+  attractionMethod.classList.add("transparent");
 
-  header.innerHTML = content.title;
+  title.innerHTML = content.title;
   image.src = content.image;
   image.alt = content.menuTitle + ' image';
   description.innerHTML = content.description;
@@ -146,20 +149,10 @@ const renderPage = (state) => {
 // start App when DOM is loaded
 document.addEventListener('DOMContentLoaded', (event)=>{
   
-  let a = document.createElement("a");
-  a.className = "btn-toogle-menu";
-  a.href = "javascript:void(0)";
-  a.addEventListener('click', toggleMenu);
-  header.parentNode.insertBefore(a,header);
-  
-
   renderPage(state);
 
+  toggleMenuButton.addEventListener('click', toggleMenu);
   menuUl.addEventListener('click',menuItemClickListener);
   image.addEventListener('load',showTextContent);
-
-  if (getViewWidth() < maxAutoHideMenuWidth) {
-    document.querySelector('.btn-toogle-menu').click(); 
-  }
 
 });

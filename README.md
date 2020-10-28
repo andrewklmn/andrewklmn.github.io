@@ -1,4 +1,5 @@
-## Completed tasks:
+## Frontend 2021 tasks
 
-- [X] [html-css-popup-task](https://github.com/andrewklmn/andrewklmn.github.io/tree/master/html-css-popup) 
-- [X] [task_js_dom](https://github.com/andrewklmn/andrewklmn.github.io/tree/master/task_js_dom) 
+-[X] [html-css-popup](https://github.com/andrewklmn/frontend-2021-homeworks/tree/main/submissions/andrewklmn/html-css-popup)
+
+-[X] [task_js_dom](https://github.com/andrewklmn/frontend-2021-homeworks/tree/main/submissions/andrewklmn/task_js_dom)
