@@ -1,5 +1,13 @@
 ## Frontend 2021 tasks
 
--[X] [html-css-popup](https://github.com/andrewklmn/frontend-2021-homeworks/tree/main/submissions/andrewklmn/html-css-popup)
+Demos are here:
 
--[X] [task_js_dom](https://github.com/andrewklmn/frontend-2021-homeworks/tree/main/submissions/andrewklmn/task_js_dom)
+[html-css-popup](https://andrewklmn.github.io/frontend-2021-homeworks/submissions/andrewklmn/html-css-popup/)
+
+[task_js_dom](https://andrewklmn.github.io/frontend-2021-homeworks/submissions/andrewklmn/task-js-dom/)
+
+[a-tiny-js-world](https://andrewklmn.github.io/a-tiny-JS-world/)
+
+[memory-pair-game](https://andrewklmn.github.io/memory-pair-game/)
+
+
