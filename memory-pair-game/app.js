@@ -11,6 +11,7 @@ const files = [
 
 const imageNames = [...files,...files];
 const cardsShuffler = function() { return 0.5 - Math.random() };
+const infoDiv = document.querySelector('.info');
 const gameBoard = document.querySelector(".gameboard");
 const controlDiv = document.querySelector('.control');
 
@@ -101,7 +102,7 @@ const getGuessedCards = function() {
 }
 
 const showInfo = (text) => {
-  document.querySelector('.info').innerHTML = text;
+  infoDiv.innerHTML = text;
 }
 
 const cardClickListener = function(e) { 
@@ -149,6 +150,7 @@ const startButtonListener = function() {
   numberOfFails = 0;
   
   if (document.querySelector('.preview-option').checked) {
+    // this shuffling fires when you start new game by Start button WITH preview
     spreadCards();
     if (getOpenedCards().length == 0) {
       openAllCards();
@@ -171,6 +173,7 @@ const startButtonListener = function() {
         spreadCards();
       },100*imageNames.length);  
     } else {
+      // this shuffling fires when you start new game by Start button WITHOUT preview
       spreadCards();
     };
   };
@@ -181,7 +184,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
   showInfo('Welcome to Memory Pairs Game');
 
   initBoard();
+
+  // this shuffling call only for possibility to start first game 
+  // just by clicking any of closed cards, not by Start button.
   spreadCards();
+
   
   gameBoard.addEventListener('click',cardClickListener);
   document.querySelector('.start-btn').addEventListener('click', startButtonListener);
