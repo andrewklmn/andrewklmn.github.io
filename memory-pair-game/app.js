@@ -11,14 +11,19 @@ const files = [
 
 
 const imageNames = [...files,...files];
+const maxNumberOfOpenedCards = imageNames.length;
+
 const infoDiv = document.querySelector('.info');
 const gameBoard = document.querySelector(".gameboard");
 const controlDiv = document.querySelector('.control');
 const startButton = document.querySelector('.start-btn');
 const previewOption = document.querySelector('.preview-option');
-const previewTime = 10;         /* time in sec */
-const oneCardRemoveTime = 50;   /* time in ms */
-const oneCardSpreadTime = 100;  /* time in ms */
+
+const previewTime = 10;             /* time in periods of countDownStepTime */
+const oneCardRemoveTime = 50;       /* time in ms */
+const oneCardSpreadTime = 100;      /* time in ms */
+const cardStateChangingTime = 500;  /* time in ms */
+const countDownStepTime = 1000;     /* time in ms */
 
 let numberOfFails = 0; 
 
@@ -28,30 +33,30 @@ const getShuffledCards = function(list) {
 
 const openAllCards = function() {
   const cards = gameBoard.querySelectorAll('.flip-container');
-  cards.forEach((c,i)=>{
+  cards.forEach((card, index)=>{
     setTimeout(() => {
-      c.classList.remove('guessed');
-      c.classList.add('opened');      
-    }, oneCardSpreadTime*i);
+      card.classList.remove('guessed');
+      card.classList.add('opened');      
+    }, oneCardSpreadTime*index);
   })
 };
 
 const closeAllCards = function() {
   const cards = gameBoard.querySelectorAll('.flip-container');
-  cards.forEach((c,i)=>{
+  cards.forEach((card, index)=>{
     setTimeout(() => {
-      c.classList.remove('guessed');
-      c.classList.remove('opened');     
-    }, oneCardSpreadTime*i);
+      card.classList.remove('guessed');
+      card.classList.remove('opened');     
+    }, oneCardSpreadTime*index);
   })
 };
 
 const removeAllCards = function () {
   const cards = getAllCards();
-  cards.forEach((card,i)=>{
+  cards.forEach((card, index)=>{
     setTimeout(()=>{
       card.remove();
-    },(cards.length-i)*oneCardRemoveTime)
+    },(cards.length-index)*oneCardRemoveTime)
   });
   return cards.length*oneCardRemoveTime;
 }
@@ -59,7 +64,7 @@ const removeAllCards = function () {
 const initBoard = function () {
   const timeDelayForRemoving = removeAllCards();
   setTimeout(()=>{
-    getShuffledCards(imageNames).forEach((image,i)=>{
+    getShuffledCards(imageNames).forEach((image, index)=>{
       setTimeout(function () {
         const fragment = document.createDocumentFragment();
   
@@ -95,7 +100,7 @@ const initBoard = function () {
         fragment.appendChild(flipContainer);
   
         gameBoard.appendChild(fragment);
-      },oneCardSpreadTime*i);
+      },oneCardSpreadTime*index);
     });
   },timeDelayForRemoving);
   return timeDelayForRemoving + oneCardSpreadTime*imageNames.length;
@@ -135,22 +140,20 @@ const cardClickListener = function(e) {
   const openedCards = getOpenedCards();
   if (openedCards.length == 2) {
     if (openedCards[0].dataset.label == openedCards[1].dataset.label) {
-      setTimeout(()=>openedCards.forEach(c=>{
-        c.classList.add('guessed');
-      }),500);
+      setTimeout(()=>openedCards.forEach(card => card.classList.add('guessed')),cardStateChangingTime);
       setTimeout(() => {
-        if(getGuessedCards().length==16) {
+        if(getGuessedCards().length === maxNumberOfOpenedCards) {
           showInfo(`You won! Number of fails: ${numberOfFails}`);
           openAllCards();
-          document.querySelector('.control').classList.remove('hide');
+          controlDiv.classList.remove('hide');
         };
-      }, 700);
+      }, cardStateChangingTime);
     } else {
       numberOfFails++;
-      setTimeout(()=>openedCards.forEach(c=>c.classList.remove('opened')),500);
+      setTimeout(()=>openedCards.forEach(card => card.classList.remove('opened')),cardStateChangingTime);
     };
   };
-  if (numberOfFails>0) {
+  if (numberOfFails > 0) {
     showInfo(`Number of fails: ${numberOfFails}`);
   };
 };
@@ -161,7 +164,7 @@ const countDown = (time)=>{
     showInfo(`And now try to guess!`);
   } else {
     showInfo(`Remember cards! Time left: ${time}`);
-    setTimeout(()=>{ countDown(time-1); },1000);
+    setTimeout(()=>{ countDown(time-1); }, countDownStepTime);
   };
 }
 
@@ -181,7 +184,7 @@ const startButtonListener = function() {
       setTimeout(()=>{
         closeAllCards();
         showInfo(`And now try to guess!`);
-      },1000*previewTime);
+      }, countDownStepTime * previewTime);
 
     },timeout);
   } else {
@@ -193,7 +196,8 @@ const startButtonListener = function() {
 
 const init = function() {
   showInfo('Welcome to Memory Pairs Game');
-
+  controlDiv.querySelector('.preview-time').innerHTML = previewTime;
+  
   initBoard();
   
   setTimeout(()=>{
