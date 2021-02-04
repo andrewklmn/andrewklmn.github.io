@@ -1,0 +1,378 @@
+body {
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+
+  background-color: white;
+  box-sizing: content-box;
+
+  text-align: center;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+h4 {
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  font-size: 16px;
+  color: #888;
+}
+
+header {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  background-color: #343434;
+}
+
+.logo {
+  width: 80px;
+  height: 57px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+nav > ol {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+
+  padding: 0;
+}
+
+.menu > li {
+  list-style-type: none;
+  padding-right: 10px;
+}
+
+.menu a {
+  color: white;
+}
+
+.menu a:hover {
+  color: greenyellow;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+
+  margin: 0;
+  margin-top: 61px;
+
+  width: 100%;
+  height: calc(100vh - 78px);
+
+  background-color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.disappearanced {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.poster {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+
+  font-size: 12px;
+
+  width: 45%;
+}
+
+.poster_image {
+  width: 100%;
+}
+
+.poster > .about {
+  margin: 0;
+  padding: 10px;
+
+  text-align: justify;
+}
+
+.poster > .crew {
+  margin: 0;
+  padding: 10px;
+
+  text-align: center;
+}
+
+.poster hr {
+  width: 100%;
+}
+
+.interactive {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 35%;
+  height: 100%;
+}
+
+.summary_info {
+  width: 20%;
+}
+
+.screen {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.booking_form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 95%;
+  min-width: 200px;
+  max-width: 450px;
+
+  height: 100%;
+}
+
+.checkbox_control {
+  position: absolute;
+}
+
+.checkbox_label {
+  display: inline-table;
+  padding: 5px;
+  border: solid 3px white;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+
+  background-color: green;
+  color: white;
+
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.checkbox_label:hover {
+  border: solid 3px yellow;
+}
+
+.checkbox_control:focus + .checkbox_label {
+  border: solid 3px cyan;
+}
+
+.checkbox_control:disabled + .checkbox_label {
+  background-color: gray;
+}
+
+.checkbox_control:active + .checkbox_label {
+  border: solid 3px yellow;
+}
+
+.checkbox_control:checked + .checkbox_label {
+  background-color: red;
+  color: white;
+}
+
+.seat_set {
+  width: 100%;
+}
+
+.seat_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  width: 95%;
+  height: calc(100vh / 15);
+  min-height: 25px;
+  max-height: 40px;
+}
+
+.seat {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  width: 9%;
+  height: 100%;
+
+  font-size: 14px;
+}
+
+.seat_label {
+  padding-top: 4px;
+  align-self: center;
+
+  width: 80%;
+  height: 100%;
+
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+
+  border: solid 3px #ffffff;
+  background-color: green;
+
+  cursor: pointer;
+}
+
+.seat_control {
+  position: absolute;
+  align-self: center;
+  margin: 0;
+
+  border: none;
+  outline: solid transparent;
+}
+
+.seat_control:focus + .seat_label {
+  border: solid 3px cyan;
+}
+
+.seat_control:disabled + .seat_label {
+  cursor: not-allowed;
+}
+
+.seat_control:checked + .seat_label {
+  background-color: red;
+}
+
+.seat_label:hover {
+  border: solid 3px yellow;
+}
+
+.seat_control:disabled + label.seat_label {
+  background-color: darkgray;
+}
+
+.selector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
+
+.book_button {
+  height: 44px;
+  width: 70%;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font-weight: bold;
+  color: white;
+  background-color: #f60;
+
+  border-radius: 20px;
+  cursor: pointer;
+}
+.book_button:hover {
+  background-color: orangered;
+}
+
+.summary_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  width: 70%;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: black;
+
+  border: solid steelblue 2px;
+  border-radius: 20px;
+
+  -webkit-box-shadow: 5px 5px 10px 5px gray;
+  box-shadow: 5px 5px 10px 5px gray;
+  list-style-type: none;
+}
+
+.ticket_header {
+  font-weight: bold;
+  font-size: 1.6em;
+  color: steelblue;
+}
+
+footer {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 17px;
+  color: lightgray;
+  background-color: #343434;
+
+  font-size: 13px;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+    height: auto;
+    justify-content: start;
+    align-items: center;
+  }
+  .poster,
+  .interactive {
+    width: 100vw;
+    height: auto;
+  }
+  .summary_info {
+    width: 100%;
+
+    flex-direction: row;
+  }
+  .ticket {
+    width: 200px;
+  }
+}
