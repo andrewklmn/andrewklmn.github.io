@@ -10,6 +10,6 @@ Demos are here:
 
 [memory-pair-game](https://andrewklmn.github.io/memory-pair-game/)
 
-[friends-app](https://andrewklmn.github.io/friends-app/)
+[friends-app](https://andrewklmn.github.io/friends-app/index.html)
 
 [html-css-cinema-booking](https://andrewklmn.github.io/html-css-cinema-booking/)
