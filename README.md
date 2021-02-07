@@ -13,3 +13,8 @@ Demos are here:
 [friends-app](https://andrewklmn.github.io/friends-app/index.html)
 
 [html-css-cinema-booking](https://andrewklmn.github.io/html-css-cinema-booking/)
+
+
+## Other tasks
+
+[Responsive image udacity project](https://andrewklmn.github.io/responsive-image-udacity-project/Project-Part-1-Start/)
