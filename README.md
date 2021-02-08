@@ -8,6 +8,8 @@ Demos are here:
 
 [a-tiny-js-world](https://andrewklmn.github.io/a-tiny-JS-world/)
 
+[frogger-game](https://andrewklmn.github.io/frogger-game/)
+
 [memory-pair-game](https://andrewklmn.github.io/memory-pair-game/)
 
 [friends-app](https://andrewklmn.github.io/friends-app/index.html)
