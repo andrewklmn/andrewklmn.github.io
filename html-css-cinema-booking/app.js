@@ -74,7 +74,7 @@ const updateTicket = () => {
     <li>----------</li>
     <li>Total: $${total.toFixed(2)}</li>
   `;
-  ticketDateTime.innerHTML = `Show time: ${selectedDate} / ${selectedTime}`;
+  ticketDateTime.innerHTML = `Show time: ${selectedDate}, ${selectedTime}`;
   ticketSeats.innerHTML = `${selectedSeats.map((seat) => {
     const seatPosition = seat.id.split('_');
     return `<div>row #${seatPosition[1]}, seat #${seatPosition[2]}</div>`;
