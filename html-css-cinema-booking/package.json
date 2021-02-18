@@ -1,0 +1,16 @@
+{
+  "name": "html-css-cinema-booking",
+  "version": "1.0.0",
+  "description": "cinema seat booking app for kottans frontend 2021 course",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
