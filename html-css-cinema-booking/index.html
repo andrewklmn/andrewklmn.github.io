@@ -4,6 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ticket_view.css">
     <title>Cinema ticket booking form</title>
   </head>
   <body>
@@ -25,7 +26,7 @@
               sizes="(max-width: 500px) 480px, 992px"
               src="img/banner-horizontal.jpg"
               alt="Poster of selected movie">
-        <h1>Interstellar (2014)</h1>
+        <h1 class="movie_name">Interstellar (2014)</h1>
         <p class="about">
           In Earth's future, a global crop blight and second Dust Bowl are slowly 
           rendering the planet uninhabitable. Professor Brand (Michael Caine), 
@@ -494,7 +495,7 @@
               </article>
             </section>
           </section>
-          <button class="book_button" type="submit">
+          <button class="btn book_button" type="submit">
             Buy now
           </button>
         </form>
@@ -502,25 +503,29 @@
       <section class="summary_info" aria-label="Ticket view">
         <h1 class="hidden">Your order:</h1>
         <ul class="ticket" aria-label="Order details">
-          <li>Select your seats!</li>
-          <!--
-          <li class="ticket_header">Your order:</li>
-          <li>Movie: Interstellar</li>
-          <li>----------</li>
-          <li>Date: 08/02/2021</li>
-          <li>Time: 15:00</li>
-          <li>----------</li>
-          <li>Seats:</li>
-          <li>Row #1, seat #3</li>
-          <li>Row #1, seat #4</li>
-          <li>Row #1, seat #5</li>
-          <li>Row #1, seat #6</li>
-          <li>----------</li>
-          <li>Total: $120.00 </li>
-          -->
+          <li><span class="arrow">Select your seats!</span></li>
         </ul>
       </sec>
     </main>
+    <div class="confirm_screen hidden">
+      <h1>You have selected:</h1>
+      <div class="ticket_view">
+          <div class="ticket_poster">
+            <img class="poster_image" 
+              src="img/banner-horizontal_480w.jpg"
+              alt="Poster of selected movie">
+          </div>
+          <div class="ticket_details">
+            <div class="ticket_date_time">ticker_date_time</div>
+            <div class="ticket_seats">ticket_seats</div>
+            <div class="ticket_total">ticket_total</div>
+          </div>
+      </div>
+      <div>
+        <button class="btn cancel_confirm_button">Cancel</button>
+        <button class="btn confirm_button">Pay now</button>
+      </div>  
+    </div>
     <footer>Copyright © 2021 Cinema company. All Rights Reserved</footer>
     <script src="app.js" type="text/javascript"></script>
   </body>
