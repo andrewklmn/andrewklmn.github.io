@@ -14,7 +14,7 @@ Demos are here:
 
 [friends-app](https://andrewklmn.github.io/friends-app/index.html)
 
-[html-css-cinema-booking](https://andrewklmn.github.io/html-css-cinema-booking/)
+[html-css-cinema-booking](https://andrewklmn.github.io/html-css-cinema-booking/dist)
 
 
 ## Other tasks
