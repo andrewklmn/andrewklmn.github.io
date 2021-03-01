@@ -6,6 +6,8 @@ body {
 
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  
+  overflow-y: scroll;
 }
 
 h1, h3 {
@@ -267,7 +269,7 @@ main {
   color: white;
 
   
-  background-image: url('img/seat_template.png');
+  background-image: url('../img/seat_template.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
