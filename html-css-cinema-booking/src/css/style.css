@@ -105,6 +105,11 @@ main {
   -webkit-appearance: none;
 }
 
+.tab_disabled {
+  display: none;
+  visibility: hidden;
+}
+
 .poster {
   display: flex;
   flex-direction: column;
