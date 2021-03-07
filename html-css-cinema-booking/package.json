@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.13.8",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.2",
     "eslint": "^7.20.0",
