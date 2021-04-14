@@ -113,7 +113,7 @@ main {
 .poster {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: stretch;
 
   font-size: 16px;
