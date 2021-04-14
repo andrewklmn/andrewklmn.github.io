@@ -54,14 +54,10 @@ function getSeatPosition(seatElement) {
 
 function drawTicketPosition(selectedSeats) {
   if (selectedSeats.length <= MAX_DETAILED_SEATS_IN_TICKET) {
-    const result = `<li>Seats</li>${selectedSeats.map((nextSeat) => {
+    return selectedSeats.map((nextSeat) => {
       const { row, seat } = getSeatPosition(nextSeat);
-      return `<li>row ${row}: seat ${seat}</li>`;
-    }).join('')}
-    <li>----------</li> 
-    <li>Total: ${selectedSeats.length} seats</li>`;
-
-    return result;
+      return `<li>row#${row} seat:${seat}</li>`;
+    }).join('');
   }
 
   const selectedRows = selectedSeats.reduce((acc, nextSeat) => {
@@ -72,7 +68,7 @@ function drawTicketPosition(selectedSeats) {
     return acc;
   }, []);
 
-  let answer = '<li>Row: Seats</li>';
+  let answer = '';
 
   selectedRows.forEach((nextRow) => {
     const seatsInRow = [];
@@ -82,10 +78,8 @@ function drawTicketPosition(selectedSeats) {
         seatsInRow.push(seat);
       }
     });
-    answer += `<li>&nbsp;#${nextRow}: ${getShortedSeatsInRowRecord(seatsInRow)}</li>`;
+    answer += `<li>row#${nextRow} seat:${getShortedSeatsInRowRecord(seatsInRow)}</li>`;
   });
-  answer += '<li>----------</li>';
-  answer += `<li>Total: ${selectedSeats.length} seats</li>`;
   return answer;
 }
 
@@ -119,15 +113,15 @@ export default function updateTicket() {
     <li>Movie: Interstellar</li>
     <li>Date: ${selectedDate}</li>
     <li>Time: ${selectedTime}</li>
-    <li>----------</li>
+    <li>-------------</li>
     ${drawTicketPosition(selectedSeats)}
-    <li>----------</li>
+    <li>-------------</li>
+    <li>Number of seats:&nbsp;${selectedSeats.length}</li>
     <li>Price: $${total.toFixed(2)}</li>
   `;
+
   ticketDateTime.innerHTML = `Show time: ${selectedDate}, ${selectedTime}`;
-  ticketSeats.innerHTML = `${selectedSeats.map((seat) => {
-    const seatPosition = seat.id.split('_');
-    return `<div>row #${seatPosition[1]}, seat #${seatPosition[2]}</div>`;
-  }).join('')}`;
-  ticketTotal.innerHTML = `Price: $${total.toFixed(2)}`;
+  ticketSeats.innerHTML = drawTicketPosition(selectedSeats);
+  ticketTotal.innerHTML = `Number of seats:&nbsp;${selectedSeats.length}</br>
+    Price: $${total.toFixed(2)}`;
 }
