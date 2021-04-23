@@ -16,6 +16,7 @@ Demos are here:
 
 [html-css-cinema-booking](https://andrewklmn.github.io/html-css-cinema-booking/dist)
 
+[framework-task](https://andrewklmn.github.io/framework-task/)
 
 ## Other tasks
 
