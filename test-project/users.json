@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "login": "andrewklmn",
+            "name": "Andrew Klmn",
+            "email": "andrew.klmn@gmail.com"
+        },
+        {
+            "id": 2,
+            "login": "andriiklymeniuk",
+            "name": "Andrii Klymeniuk",
+            "email": "andrii.klymeniuk@fordewind.io"
+        }
+    ]
+}
