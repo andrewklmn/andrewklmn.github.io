@@ -21,3 +21,5 @@ Demos are here:
 ## Other tasks
 
 [Responsive image udacity project](https://andrewklmn.github.io/responsive-image-udacity-project/Project-Part-1-Start/)
+
+[test-project](https://andrewklmn.github.io/test-project/)
